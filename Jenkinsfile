@@ -4,7 +4,6 @@ pipeline {
         stage('Build'){
             steps{
                 sh 'mvn clean package'
-                sh  'sudo usermod -a -G docker $USER'
                 sh  "docker build . -t tomcatwebapp:1"
 
 
